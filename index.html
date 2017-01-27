@@ -1,0 +1,208 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <style>
+            html{
+                font-size: 5px!important;
+                background-color: #FFF;
+            }
+            .chicken{
+                margin-top:10vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            .chicken-body{
+                background-color: yellow;
+                height: 15rem;
+                width: 12rem;
+                border-radius:55% 55% 50% 50% / 60% 60% 40% 40%;
+                position: relative;
+                display: block;
+                top: 0rem;
+                z-index: 0;
+                transition: transform 1s,top 1s,z-index 1s;
+            }
+            .chicken-body-scala{
+                transform: scale(5);
+                top: 10rem;
+                z-index: 10;
+                animation: bodySwing 1.5s infinite;
+            }
+            @keyframes bodySwing
+            {
+                0%   {
+                    top: 10rem;z-index: 10;transform: scale(5) rotate(10deg);
+                }
+                50%  {
+                    top: 10rem;z-index: 10;transform: scale(5) rotate(-10deg);
+                }
+                100% {
+                    top: 10rem;z-index: 10;transform: scale(5) rotate(10deg);
+                }
+            }
+            .chicken-eyes{
+                position: static;
+                transition: transform 1s;
+            }
+            .chicken-body-scala .chicken-eyes{
+                transform: scale(0.5);
+            }
+            .chicken-left-eye{
+                background-color: black;
+                height: 0.9rem;
+                width: 0.9rem;
+                border-radius: 50%;
+                position: relative;
+                left: 3.5rem;
+                top: 4rem;
+                display: inline-block;
+                transition: top 1s;
+            }
+            .chicken-body-scala .chicken-eyes .chicken-left-eye{
+                top:10rem;
+            }
+            .chicken-right-eye{
+                background-color: black;
+                height: 0.9rem;
+                width: 0.9rem;
+                border-radius: 50%;
+                position: relative;
+                left: 7.5rem;
+                top: 4rem;
+                display: inline-block;
+                transition: top 1s;
+            }
+            .chicken-body-scala .chicken-eyes .chicken-right-eye{
+                top:10rem;
+            }
+            .chicken-mouth{
+                background-color: orange;
+                width: 1.5rem;
+                height: 0.75rem;
+                clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+                display: inline-block;
+                position: relative;
+                left: 6.2rem;
+                top: 3.2rem;
+                transition: transform 1s,top 1s,left 1s;
+            }
+            .chicken-body-scala .chicken-mouth{
+                transform: scale(0.5);
+                top: 4.3rem;
+                left: 5.7rem;
+            }
+            .chicken-hair{
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 3rem 0.7rem 0 0.7rem;
+                border-color: red transparent transparent transparent;
+                transform: rotate(-20deg);
+                display: block;
+                position: relative;
+                top: 2rem;
+                left: 0.5rem;
+                z-index: 1;
+            }
+            .chicken-foots{
+                position: static;
+                display: block;
+            }
+            .chicken-left-foot{
+                display: inline-block;
+                height: 1.1rem;
+                width: 0.3rem;
+                background-color: orange;
+                position:relative;
+                left: -1.5rem;
+                top: -0.7rem;
+            }
+            .chicken-right-foot{
+                display: inline-block;
+                height: 1.2rem;
+                width: 0.3rem;
+                background-color: orange;
+                position:relative;
+                left: 2.5rem;
+                top: -0.7rem;
+                z-index: -1;
+            }
+            .chicken-shadow{
+                background-color: rgba(10,10,10,0.1);
+                height: 1rem;
+                width: 12rem;
+                border-radius:55% 55% 50% 50%;
+                position: relative;
+                top: -1.2rem;
+                z-index: -2;
+            }
+            .chicken-hand{
+                background-color: yellow;
+                height: 5rem;
+                width: 2rem;
+                border-radius:50% / 100% 100% 0 0;
+                position: relative;
+                z-index: -2;
+                transform: rotate(40deg);
+                animation: swing 1.5s infinite;
+            }
+            @keyframes swing
+            {
+                0%   {top: -13.5rem;left:6.5rem;transform: rotate(40deg);}
+                50%  {top: -13rem;left:6rem;transform: rotate(30deg);}
+                100% {top: -13.5rem;left:6.5rem;transform: rotate(40deg);}
+            }
+            .title{
+                text-align: center;
+            }
+            .title h1{
+                font-size: 7rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="chicken">
+            <div class="chicken-hair"></div>
+            <div class="chicken-body chicken-body-scala">
+                <div class="chicken-eyes">
+                    <div class="chicken-left-eye">
+                    </div>
+                    <div class="chicken-right-eye">
+                    </div>
+                </div>
+                <div class="chicken-mouth">
+                </div>
+            </div>
+            <div class="chicken-foots">
+                <div class="chicken-left-foot">
+                </div>
+                <div class="chicken-right-foot">
+                </div>
+            </div>
+            <div class="chicken-shadow">
+            </div>
+            <div class="chicken-hand">
+            </div>
+        </div>
+        <div class="title">
+            <h4>kok祝你</h4>
+            <h1>新年快乐</h1>
+            <p>Design from <a href="http://xiachufang.com">下厨房设计组</a></p>
+        </div>
+        <script>
+            var body = document.getElementsByClassName('chicken-body')[0];
+            var foot = document.getElementsByClassName('chicken-left-foot')[0];
+            var addScala = function() {
+                body.setAttribute("class","chicken-body chicken-body-scala")
+            }
+            var removeScala = function() {
+                body.setAttribute("class","chicken-body")
+            }
+            body.addEventListener('touchstart',addScala,false);
+            body.addEventListener('touchend',removeScala,false);
+        </script>
+    </body>
+</html>
