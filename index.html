@@ -2,7 +2,7 @@
     <head>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta charset="utf-8">
-        <meta content="width=350, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
         <meta name="author" content="kokdemo">
         <title>kok向你拜年了</title>
         <style>
@@ -83,19 +83,19 @@
             }
             .chicken-mouth{
                 background-color: orange;
-                width: 1.5rem;
-                height: 0.75rem;
-                clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+                width: 0.8rem;
+                height: 0.8rem;
+                transform: rotate(45deg) skew(-20deg, -20deg);
                 display: inline-block;
                 position: relative;
-                left: 6.2rem;
-                top: 3.2rem;
+                left: 6.4rem;
+                top: 3.3rem;
                 transition: transform 1s,top 1s,left 1s;
             }
             .chicken-body-scala .chicken-mouth{
-                transform: scale(0.5);
+                transform: scale(0.5) rotate(45deg) skew(-20deg, -20deg);
                 top: 4.3rem;
-                left: 5.7rem;
+                left: 6rem;
             }
             .chicken-hair{
                 width: 0;
