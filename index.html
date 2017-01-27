@@ -6,6 +6,14 @@
         <meta name="author" content="kokdemo">
         <title>kok向你拜年了</title>
         <style>
+            * {
+            -webkit-touch-callout:none;
+            -webkit-user-select:none;
+            -khtml-user-select:none;
+            -moz-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+            }
             html{
                 font-size: 12px!important;
                 background-color: #FFF;
@@ -160,6 +168,7 @@
             }
             .title{
                 text-align: center;
+                margin-top: -3rem;
             }
             .title h1{
                 font-size: 3rem;
@@ -205,8 +214,8 @@
             var removeScala = function() {
                 body.setAttribute("class","chicken-body")
             }
-            body.addEventListener('touchstart',addScala,false);
-            body.addEventListener('touchend',removeScala,false);
+            document.addEventListener('touchstart',addScala,false);
+            document.addEventListener('touchend',removeScala,false);
         </script>
     </body>
 </html>
